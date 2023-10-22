@@ -6,8 +6,8 @@ screen home():
     imagemap:
         idle "main_buttons_home"
         alpha False
-        hotspot (0, 1407, 240, 153) action [Hide("home"), Show("main_menu")] #Learn
-        hotspot (240, 1407, 720, 1560) action [Hide("home"), Show("main_menu")] #Stats
+        #hotspot (0, 1407, 240, 153) action [Hide("home"), Show("main_menu")] #Learn
+        hotspot (240, 1407, 720, 1560) action [Hide("home"), Show("grades")] #Stats
         hotspot (480, 1407, 720, 1560) action [Hide("home"), Show("main_menu")] #Settings
 
     viewport:
