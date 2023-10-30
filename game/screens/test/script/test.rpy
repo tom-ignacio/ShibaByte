@@ -1,21 +1,31 @@
-define test_number = 0
-define next_sum = renpy.random.randint(1, 2)
+default test_number = 0
+define next_sum = 0
 define counter = 0
-define question = renpy.random.randint(0, 2)
+define question = 0
 define result = 0
 
-define correct = 0
-define incorrect = 0
+default correct = 0
+default incorrect = 0
 
 default persistent.grade = [0, 0, 0, 0, 0]
 
-#Order is: Read, A check, B check, C check
+#Order is: A check, B check, C check
 define test_questions = [
-[True, False, False], #0
-[False, True, False], #1
-[False, False, True], #2
-[False, False, True], #3
+[False, True, False], #0 Test 1
+[False, False, True], #1
+[True, False, False], #2
+[True, False, False], #3
 [False, False, True], #4
+[True, False, False], #5
+[False, False, True], #6
+[False, True, False], #7
+[True, False, False], #8
+[True, False, False], #9
+[False, True, False], #10
+[True, False, False], #11
+[False, False, True], #12
+[False, False, True], #13
+[False, True, False], #14
 ]
 
 screen test():
@@ -35,17 +45,42 @@ screen test():
             Show("question_result"),
             If(test_questions[question][2] == True, [SetVariable("correct", correct + 1), SetVariable("result", 0)], [SetVariable("incorrect", incorrect + 1), SetVariable("result", 1)])]
 
-    text "Question: [question] List: [test_questions]" size 20 color "#000000" #Delete after
-
 screen question_result():
+    modal True
     $ renpy.transition(Dissolve(0.1))
     #add "bg_test"
     add "question_result_[result]"
+    text "CORRECT [correct] INCORRECT [incorrect] ACTUAL GRADE [persistent.test_result[1]]" size 50
     $ next_sum = renpy.random.randint(1, 2)
     timer 1.0 action [
         Hide("question_result"), Show("test"),
-        If(counter == 1, [Hide("test"), Show("home")], [Hide("question_result"), SetVariable("counter", counter + 1), SetVariable("question", question + next_sum)]),
+        If(counter == 6,
+            [Hide("test"),
+            Show("result"),
+            SetDict(persistent.test_result, test_number, correct),
+            If(correct > 3,
+                [If(persistent.progress == 4 and correct > 3, SetVariable("persistent.progress", 5), NullAction()),
+                If(persistent.progress == 7 and correct > 3, SetVariable("persistent.progress", 8), NullAction()),
+                If(persistent.progress == 10 and correct > 3, SetVariable("persistent.progress", 11), NullAction()),
+                If(persistent.progress == 13 and correct > 3, SetVariable("persistent.progress", 14), NullAction())],
+            NullAction())],
+        [Hide("question_result"), SetVariable("counter", counter + 1), SetVariable("question", question + next_sum)]),
     ]
+
+screen result():
+    add "bg_test"
+    if persistent.test_result[test_number] > 3:
+        add "screens/test/ui/result_0.png"
+        imagemap:
+            idle "screens/test/ui/result_button_0.png"
+            alpha True
+            hotspot (46, 1136, 631, 104) action [Hide("result"), Show("home")]
+    else:
+        add "screens/test/ui/result_1.png"
+        imagemap:
+            idle "screens/test/ui/result_button_1.png"
+            alpha True
+            hotspot (46, 1136, 631, 104) action [Hide("result"), Show("home")]
 
 
 #default persistent.data = [

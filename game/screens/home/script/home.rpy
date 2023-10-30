@@ -70,9 +70,10 @@ screen home():
                         action [
                             Hide("home"), 
                             Show("test"), 
-                            If(persistent.progress == 4, SetVariable("persistent.progress", 5), NullAction()), 
                             SetVariable("test_number", 1), 
                             SetVariable("counter", 0),
+                            SetVariable("correct", 0),
+                            SetVariable("incorrect", 0),
                             SetVariable("question", renpy.random.randint(0, 2))]
                     else:
                         idle "screens/home/ui/buttons/unit_locked.png"
@@ -116,9 +117,10 @@ screen home():
                         action [
                             Hide("home"), 
                             Show("test"), 
-                            If(persistent.progress == 7, SetVariable("persistent.progress", 8), NullAction()), 
                             SetVariable("test_number", 2), 
                             SetVariable("counter", 0),
+                            SetVariable("correct", 0),
+                            SetVariable("incorrect", 0),
                             SetVariable("question", renpy.random.randint(0, 2))]
                     else:
                         idle "screens/home/ui/buttons/unit_locked.png"
@@ -162,9 +164,10 @@ screen home():
                         action [
                             Hide("home"), 
                             Show("test"), 
-                            If(persistent.progress == 10, SetVariable("persistent.progress", 11), NullAction()), 
                             SetVariable("test_number", 3), 
                             SetVariable("counter", 0),
+                            SetVariable("correct", 0),
+                            SetVariable("incorrect", 0),
                             SetVariable("question", renpy.random.randint(0, 2))]
                     else:
                         idle "screens/home/ui/buttons/unit_locked.png"
@@ -208,9 +211,10 @@ screen home():
                         action [
                             Hide("home"), 
                             Show("test"), 
-                            If(persistent.progress == 13, SetVariable("persistent.progress", 14), NullAction()), 
                             SetVariable("test_number", 4), 
                             SetVariable("counter", 0),
+                            SetVariable("correct", 0),
+                            SetVariable("incorrect", 0),
                             SetVariable("question", renpy.random.randint(0, 2))]
                     else:
                         idle "screens/home/ui/buttons/unit_locked.png"
@@ -254,9 +258,10 @@ screen home():
                         action [
                             Hide("home"), 
                             Show("test"), 
-                            If(persistent.progress == 16, SetVariable("persistent.progress", 16), NullAction()), 
                             SetVariable("test_number", 5), 
                             SetVariable("counter", 0),
+                            SetVariable("correct", 0),
+                            SetVariable("incorrect", 0),
                             SetVariable("question", renpy.random.randint(0, 2))]
                     else:
                         idle "screens/home/ui/buttons/unit_locked.png"
