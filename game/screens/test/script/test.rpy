@@ -26,6 +26,21 @@ define test_questions = [
 [False, False, True], #12
 [False, False, True], #13
 [False, True, False], #14
+[False, True, False], #15 Test 2
+[False, True, False], #16
+[True, False, False], #17
+[True, False, False], #18
+[True, False, False], #19
+[False, True, False], #20
+[False, False, True], #21
+[True, False, False], #22
+[True, False, False], #23
+[True, False, False], #24
+[True, False, False], #25
+[True, False, False], #26
+[True, False, False], #27
+[False, False, True], #28
+[False, True, False], #29
 ]
 
 screen test():
@@ -50,7 +65,7 @@ screen question_result():
     $ renpy.transition(Dissolve(0.1))
     #add "bg_test"
     add "question_result_[result]"
-    text "CORRECT [correct] INCORRECT [incorrect] ACTUAL GRADE [persistent.test_result[1]]" size 50
+    #text "CORRECT [correct] INCORRECT [incorrect] ACTUAL GRADE [persistent.test_result[1]]" size 50
     $ next_sum = renpy.random.randint(1, 2)
     timer 1.0 action [
         Hide("question_result"), Show("test"),
