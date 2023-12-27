@@ -7,8 +7,6 @@ define result = 0
 default correct = 0
 default incorrect = 0
 
-default persistent.grade = [0, 0, 0, 0, 0]
-
 #Order is: A check, B check, C check
 define test_questions = [
 [False, True, False], #0 Test 1
