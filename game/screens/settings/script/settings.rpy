@@ -39,14 +39,18 @@ screen confirm_delete():
     #Change assets
     #Add hotspot for cancel confirmation
     add "bg_test"
-    add "screens/test/ui/result_0.png"
+    add "screens/settings/ui/buttons/settings_confirm_ground.png"
     imagemap:
-        idle "screens/test/ui/result_button_0.png"
+        idle "screens/settings/ui/buttons/settings_confirm_button.png"
         alpha True
-        hotspot (46, 1136, 631, 104) action [
+        hotspot (45, 1136, 293, 104) action [
             SetField(persistent, "sound", True),
             SetField(persistent, "test_result", [0, 0, 0, 0, 0, 0]),
             SetField(persistent, "progress", 1),
             Hide("confirm_delete"),
             Show("main_menu")
+        ]
+        hotspot (384, 1136, 293, 104) action [
+            Hide("confirm_delete"),
+            Show("settings")
         ]

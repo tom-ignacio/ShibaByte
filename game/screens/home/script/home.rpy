@@ -167,7 +167,7 @@ screen home():
                             SetVariable("counter", 0),
                             SetVariable("correct", 0),
                             SetVariable("incorrect", 0),
-                            SetVariable("question", renpy.random.randint(0, 2))]
+                            SetVariable("question", renpy.random.randint(30, 32))]
                     else:
                         idle "screens/home/ui/buttons/unit_locked.png"
 
@@ -214,7 +214,7 @@ screen home():
                             SetVariable("counter", 0),
                             SetVariable("correct", 0),
                             SetVariable("incorrect", 0),
-                            SetVariable("question", renpy.random.randint(0, 2))]
+                            SetVariable("question", renpy.random.randint(45, 47))]
                     else:
                         idle "screens/home/ui/buttons/unit_locked.png"
 
@@ -261,7 +261,7 @@ screen home():
                             SetVariable("counter", 0),
                             SetVariable("correct", 0),
                             SetVariable("incorrect", 0),
-                            SetVariable("question", renpy.random.randint(0, 2))]
+                            SetVariable("question", renpy.random.randint(60, 62))]
                     else:
                         idle "screens/home/ui/buttons/unit_locked.png"
 

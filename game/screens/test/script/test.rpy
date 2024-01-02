@@ -39,6 +39,51 @@ define test_questions = [
 [True, False, False], #27
 [False, False, True], #28
 [False, True, False], #29
+[True, False, False], #30 Test 3
+[True, False, False], #31
+[False, True, False], #32
+[True, False, False], #33
+[True, False, False], #34
+[True, False, False], #35
+[False, True, False], #36
+[False, True, False], #37
+[False, False, True], #38
+[True, False, False], #39
+[False, False, True], #40
+[False, True, False], #41
+[True, False, False], #42
+[False, False, True], #43
+[False, True, False], #44
+[False, True, False], #45 Test 4
+[False, False, True], #46
+[False, True, False], #47
+[True, False, False], #48
+[True, False, False], #49
+[True, False, False], #50
+[False, True, False], #51
+[False, True, False], #52
+[False, False, True], #53
+[True, False, False], #54
+[False, True, False], #55
+[False, True, False], #56
+[True, False, False], #57
+[False, False, True], #58
+[False, True, False], #59
+[True, False, False], #60 Test 5
+[False, True, False], #61
+[True, False, False], #62
+[False, False, True], #63
+[True, False, False], #64
+[False, False, True], #65
+[False, True, False], #66
+[True, False, False], #67
+[False, True, False], #68
+[True, False, False], #69
+[False, False, True], #70
+[True, False, False], #71
+[False, True, False], #72
+[False, True, False], #73
+[False, False, True], #74
 ]
 
 screen test():
