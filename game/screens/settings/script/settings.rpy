@@ -5,8 +5,8 @@ screen settings():
     imagemap:
         idle "main_buttons_settings"
         alpha False
-        hotspot (0, 1407, 240, 153) action [Hide("settings"), Show("home")] #Learn
-        hotspot (240, 1407, 720, 1560) action [Hide("settings"), Show("grades")] #Stats
+        hotspot (0, 1407, 240, 153) action [Hide("settings"), Show("home"), Play("sound", "audio/click_2.mp3")] #Learn
+        hotspot (240, 1407, 720, 1560) action [Hide("settings"), Show("grades"), Play("sound", "audio/click_2.mp3")] #Stats
 
     viewport:
         area (46, 240, 640, 678)
@@ -22,10 +22,10 @@ screen settings():
                     focus_mask True
                     if persistent.sound == True:
                         idle "screens/settings/ui/buttons/on.png"
-                        action SetVariable("persistent.sound", False)
+                        action [SetVariable("persistent.sound", False), Play("sound", "audio/click.mp3"), Preference("all mute", "toggle")]
                     else:
                         idle "screens/settings/ui/buttons/off.png"
-                        action SetVariable("persistent.sound", True)
+                        action [SetVariable("persistent.sound", True), Play("sound", "audio/click.mp3"), Preference("all mute", "toggle")]
 
             #Delete data
             frame:
@@ -33,7 +33,7 @@ screen settings():
                 imagebutton:
                     focus_mask True
                     idle "screens/settings/ui/buttons/delete.png"
-                    action [Hide("settings"), Show("confirm_delete")]
+                    action [Hide("settings"), Show("confirm_delete"), Play("sound", "audio/click.mp3")]
 
 screen confirm_delete():
     #Change assets
@@ -48,9 +48,11 @@ screen confirm_delete():
             SetField(persistent, "test_result", [0, 0, 0, 0, 0, 0]),
             SetField(persistent, "progress", 1),
             Hide("confirm_delete"),
-            Show("main_menu")
+            Show("main_menu"),
+            Play("sound", "audio/click_2.mp3")
         ]
         hotspot (384, 1136, 293, 104) action [
             Hide("confirm_delete"),
-            Show("settings")
+            Show("settings"),
+            Play("sound", "audio/click.mp3")
         ]

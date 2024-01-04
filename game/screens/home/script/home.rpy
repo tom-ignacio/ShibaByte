@@ -6,8 +6,8 @@ screen home():
     imagemap:
         idle "main_buttons_home"
         alpha False
-        hotspot (240, 1407, 720, 1560) action [Hide("home"), Show("grades")] #Stats
-        hotspot (480, 1407, 720, 1560) action [Hide("home"), Show("settings")] #Settings
+        hotspot (240, 1407, 720, 1560) action [Hide("home"), Show("grades"), Play("sound", "audio/click_2.mp3")] #Stats
+        hotspot (480, 1407, 720, 1560) action [Hide("home"), Show("settings"), Play("sound", "audio/click_2.mp3")] #Settings
 
     viewport:
         area (46, 722, 640, 678)
@@ -26,7 +26,8 @@ screen home():
                             Hide("home"), 
                             Show("unit"), 
                             SetVariable("unit", 1),
-                            If(persistent.progress == 1, SetVariable("persistent.progress", 2), NullAction())]
+                            If(persistent.progress == 1, SetVariable("persistent.progress", 2), NullAction()),
+                            Play("sound", "audio/click.mp3")]
                     else:
                         idle "screens/home/ui/buttons/unit_locked.png"
 
@@ -41,7 +42,8 @@ screen home():
                             Hide("home"), 
                             Show("unit"),
                             SetVariable("unit", 2),
-                            If(persistent.progress == 2, SetVariable("persistent.progress", 3), NullAction())]
+                            If(persistent.progress == 2, SetVariable("persistent.progress", 3), NullAction()),
+                            Play("sound", "audio/click.mp3")]
                     else:
                         idle "screens/home/ui/buttons/unit_locked.png"
 
@@ -56,7 +58,8 @@ screen home():
                             Hide("home"), 
                             Show("unit"), 
                             SetVariable("unit", 3),
-                            If(persistent.progress == 3, SetVariable("persistent.progress", 4), NullAction())]
+                            If(persistent.progress == 3, SetVariable("persistent.progress", 4), NullAction()),
+                            Play("sound", "audio/click.mp3")]
                     else:
                         idle "screens/home/ui/buttons/unit_locked.png"
 
@@ -73,7 +76,8 @@ screen home():
                             SetVariable("counter", 0),
                             SetVariable("correct", 0),
                             SetVariable("incorrect", 0),
-                            SetVariable("question", renpy.random.randint(0, 2))]
+                            SetVariable("question", renpy.random.randint(0, 2)),
+                            Play("sound", "audio/click.mp3")]
                     else:
                         idle "screens/home/ui/buttons/unit_locked.png"
 
@@ -88,7 +92,8 @@ screen home():
                             Hide("home"), 
                             Show("unit"), 
                             SetVariable("unit", 4),
-                            If(persistent.progress == 5, SetVariable("persistent.progress", 6), NullAction())]
+                            If(persistent.progress == 5, SetVariable("persistent.progress", 6), NullAction()),
+                            Play("sound", "audio/click.mp3")]
                     else:
                         idle "screens/home/ui/buttons/unit_locked.png"
 
@@ -103,7 +108,8 @@ screen home():
                             Hide("home"), 
                             Show("unit"), 
                             SetVariable("unit", 5),
-                            If(persistent.progress == 6, SetVariable("persistent.progress", 7), NullAction())]
+                            If(persistent.progress == 6, SetVariable("persistent.progress", 7), NullAction()),
+                            Play("sound", "audio/click.mp3")]
                     else:
                         idle "screens/home/ui/buttons/unit_locked.png"
 
@@ -120,7 +126,8 @@ screen home():
                             SetVariable("counter", 0),
                             SetVariable("correct", 0),
                             SetVariable("incorrect", 0),
-                            SetVariable("question", renpy.random.randint(15, 17))]
+                            SetVariable("question", renpy.random.randint(15, 17)),
+                            Play("sound", "audio/click.mp3")]
                     else:
                         idle "screens/home/ui/buttons/unit_locked.png"
 
@@ -135,7 +142,8 @@ screen home():
                             Hide("home"), 
                             Show("unit"), 
                             SetVariable("unit", 6),
-                            If(persistent.progress == 8, SetVariable("persistent.progress", 9), NullAction())]
+                            If(persistent.progress == 8, SetVariable("persistent.progress", 9), NullAction()),
+                            Play("sound", "audio/click.mp3")]
                     else:
                         idle "screens/home/ui/buttons/unit_locked.png"
 
@@ -150,7 +158,8 @@ screen home():
                             Hide("home"), 
                             Show("unit"), 
                             SetVariable("unit", 7),
-                            If(persistent.progress == 9, SetVariable("persistent.progress", 10), NullAction())]
+                            If(persistent.progress == 9, SetVariable("persistent.progress", 10), NullAction()),
+                            Play("sound", "audio/click.mp3")]
                     else:
                         idle "screens/home/ui/buttons/unit_locked.png"
 
@@ -167,7 +176,8 @@ screen home():
                             SetVariable("counter", 0),
                             SetVariable("correct", 0),
                             SetVariable("incorrect", 0),
-                            SetVariable("question", renpy.random.randint(30, 32))]
+                            SetVariable("question", renpy.random.randint(30, 32)),
+                            Play("sound", "audio/click.mp3")]
                     else:
                         idle "screens/home/ui/buttons/unit_locked.png"
 
@@ -182,7 +192,8 @@ screen home():
                             Hide("home"), 
                             Show("unit"), 
                             SetVariable("unit", 8),
-                            If(persistent.progress == 11, SetVariable("persistent.progress", 12), NullAction())]
+                            If(persistent.progress == 11, SetVariable("persistent.progress", 12), NullAction()),
+                            Play("sound", "audio/click.mp3")]
                     else:
                         idle "screens/home/ui/buttons/unit_locked.png"
 
@@ -197,7 +208,8 @@ screen home():
                             Hide("home"), 
                             Show("unit"),
                             SetVariable("unit", 9), 
-                            If(persistent.progress == 12, SetVariable("persistent.progress", 13), NullAction())]
+                            If(persistent.progress == 12, SetVariable("persistent.progress", 13), NullAction()),
+                            Play("sound", "audio/click.mp3")]
                     else:
                         idle "screens/home/ui/buttons/unit_locked.png"
 
@@ -214,7 +226,8 @@ screen home():
                             SetVariable("counter", 0),
                             SetVariable("correct", 0),
                             SetVariable("incorrect", 0),
-                            SetVariable("question", renpy.random.randint(45, 47))]
+                            SetVariable("question", renpy.random.randint(45, 47)),
+                            Play("sound", "audio/click.mp3")]
                     else:
                         idle "screens/home/ui/buttons/unit_locked.png"
 
@@ -229,7 +242,8 @@ screen home():
                             Hide("home"), 
                             Show("unit"), 
                             SetVariable("unit", 10),
-                            If(persistent.progress == 14, SetVariable("persistent.progress", 15), NullAction())]
+                            If(persistent.progress == 14, SetVariable("persistent.progress", 15), NullAction()),
+                            Play("sound", "audio/click.mp3")]
                     else:
                         idle "screens/home/ui/buttons/unit_locked.png"
 
@@ -244,7 +258,8 @@ screen home():
                             Hide("home"), 
                             Show("unit"), 
                             SetVariable("unit", 11),
-                            If(persistent.progress == 15, SetVariable("persistent.progress", 16), NullAction())]
+                            If(persistent.progress == 15, SetVariable("persistent.progress", 16), NullAction()),
+                            Play("sound", "audio/click.mp3")]
                     else:
                         idle "screens/home/ui/buttons/unit_locked.png"
 
@@ -261,7 +276,8 @@ screen home():
                             SetVariable("counter", 0),
                             SetVariable("correct", 0),
                             SetVariable("incorrect", 0),
-                            SetVariable("question", renpy.random.randint(60, 62))]
+                            SetVariable("question", renpy.random.randint(60, 62)),
+                            Play("sound", "audio/click.mp3")]
                     else:
                         idle "screens/home/ui/buttons/unit_locked.png"
 

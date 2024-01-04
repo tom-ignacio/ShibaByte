@@ -355,7 +355,7 @@ screen main_menu():
     imagemap:
         idle "start_button_title"
         alpha False
-        hotspot (0, 0, 720, 1560) action [Hide("main_menu"), Show("home")]
+        hotspot (0, 0, 720, 1560) action [Hide("main_menu"), Show("home"), Play("sound", "audio/click_2.mp3")]
 
 
 style main_menu_frame is empty

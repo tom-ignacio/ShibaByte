@@ -95,13 +95,13 @@ screen test():
         alpha False
         hotspot (46, 760, 630, 170) action [
             Show("question_result"),
-            If(test_questions[question][0] == True, [SetVariable("correct", correct + 1), SetVariable("result", 0)], [SetVariable("incorrect", incorrect + 1), SetVariable("result", 1)])]
+            If(test_questions[question][0] == True, [SetVariable("correct", correct + 1), SetVariable("result", 0), Play("sound", "audio/correct.mp3")], [SetVariable("incorrect", incorrect + 1), SetVariable("result", 1), Play("sound", "audio/incorrect.mp3")])]
         hotspot (46, 975, 630, 170) action [
             Show("question_result"),
-            If(test_questions[question][1] == True, [SetVariable("correct", correct + 1), SetVariable("result", 0)], [SetVariable("incorrect", incorrect + 1), SetVariable("result", 1)])]
+            If(test_questions[question][1] == True, [SetVariable("correct", correct + 1), SetVariable("result", 0), Play("sound", "audio/correct.mp3")], [SetVariable("incorrect", incorrect + 1), SetVariable("result", 1), Play("sound", "audio/incorrect.mp3")])]
         hotspot (46, 1191, 630, 170) action [
             Show("question_result"),
-            If(test_questions[question][2] == True, [SetVariable("correct", correct + 1), SetVariable("result", 0)], [SetVariable("incorrect", incorrect + 1), SetVariable("result", 1)])]
+            If(test_questions[question][2] == True, [SetVariable("correct", correct + 1), SetVariable("result", 0), Play("sound", "audio/correct.mp3")], [SetVariable("incorrect", incorrect + 1), SetVariable("result", 1), Play("sound", "audio/incorrect.mp3")])]
 
 screen question_result():
     modal True
@@ -120,8 +120,9 @@ screen question_result():
                 [If(persistent.progress == 4 and correct > 3, SetVariable("persistent.progress", 5), NullAction()),
                 If(persistent.progress == 7 and correct > 3, SetVariable("persistent.progress", 8), NullAction()),
                 If(persistent.progress == 10 and correct > 3, SetVariable("persistent.progress", 11), NullAction()),
-                If(persistent.progress == 13 and correct > 3, SetVariable("persistent.progress", 14), NullAction())],
-            NullAction())],
+                If(persistent.progress == 13 and correct > 3, SetVariable("persistent.progress", 14), NullAction()),
+                Play("sound", "audio/win.mp3")],
+                Play("sound", "audio/lose.mp3"))],
         [Hide("question_result"), SetVariable("counter", counter + 1), SetVariable("question", question + next_sum)]),
     ]
 

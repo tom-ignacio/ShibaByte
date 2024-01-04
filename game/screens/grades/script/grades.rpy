@@ -5,8 +5,8 @@ screen grades():
     imagemap:
         idle "main_buttons_grades"
         alpha False
-        hotspot (0, 1407, 240, 153) action [Hide("grades"), Show("home")] #Learn
-        hotspot (480, 1407, 720, 1560) action [Hide("grades"), Show("settings")] #Settings
+        hotspot (0, 1407, 240, 153) action [Hide("grades"), Show("home"), Play("sound", "audio/click_2.mp3")] #Learn
+        hotspot (480, 1407, 720, 1560) action [Hide("grades"), Show("settings"), Play("sound", "audio/click_2.mp3")] #Settings
 
     grid 1 3 xpos 45 ypos 331 spacing 47:
         grid 2 2 spacing 47:

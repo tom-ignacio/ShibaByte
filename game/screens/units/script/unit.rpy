@@ -7,7 +7,7 @@ screen unit():
     imagemap:
         idle "main_button_units"
         alpha False
-        hotspot (10, 70, 158, 158) action [Hide("unit"), Show("home")] #Back
+        hotspot (10, 70, 158, 158) action [Hide("unit"), Show("home"), Play("sound", "audio/click_2.mp3")] #Back
 
     viewport:
         area (0, 228, 720, 1332)
